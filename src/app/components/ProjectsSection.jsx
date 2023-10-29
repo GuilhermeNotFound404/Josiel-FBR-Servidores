@@ -20,7 +20,7 @@ const projectsData = [
     description: "PEDIDO CONTA  ANTIGA SHARK TOOL  10 CREDITO R$59,00",
     image: "/images/projects/card.png",
     tag: ["Loja"],
-    gitUrl: "/",
+    gitUrl: "https://wa.me/17988101676?text=Olá, tenho interesse neste produto: SharkTool - 10 Créditos - R$ 59.00",
     previewUrl: "/",
   },
   {
@@ -29,7 +29,7 @@ const projectsData = [
     description: "PEDIDO CONTA  DESBLOQUEIO  MOTOROLA  AQUI R$60,00",
     image: "/images/projects/card.png",
     tag: ["Loja"],
-    gitUrl: "/",
+    gitUrl: "https://wa.me/17988101676?text=Olá, tenho interesse neste produto: The Magic Tool - Desbloqueio Motorola - R$60,00",
     previewUrl: "/",
   },
   {
@@ -38,7 +38,7 @@ const projectsData = [
     description: "USB Redirector Client FAÇA SUA COMPRA ",
     image: "/images/projects/card.png",
     tag: ["Loja"],
-    gitUrl: "/",
+    gitUrl: "https://wa.me/17988101676?text=Olá, tenho interesse neste produto: USB Redirector Client - R$65,00",
     previewUrl: "/",
   },
   {

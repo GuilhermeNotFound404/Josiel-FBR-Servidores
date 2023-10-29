@@ -41,13 +41,13 @@ const HeroSection = () => {
           </p>
           <div>
             <Link
-              href="/contact"
+              href="https://mega.nz/folder/oyQVmTYC#BfhNcYBqcTHAzRAHRl1X9w" target="_blank"
               className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
             >
               SharkTool
             </Link>
             <Link
-              href="/"
+              href="https://global-unlocker-pro.com/Download" target="_blank"
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
@@ -56,7 +56,7 @@ const HeroSection = () => {
             </Link>
           
             <Link
-              href="/contact"
+              href="https://www.google.com/url?q=https%3A%2F%2Fthemagictool.net%2Fdownload&sa=D&sntz=1&usg=AOvVaw2LHJZEMj4FjROTQTMySICe" target="_blank"
               className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white mt-3"
             >
               The MagicTool

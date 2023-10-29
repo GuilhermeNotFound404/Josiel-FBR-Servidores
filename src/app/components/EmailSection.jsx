@@ -1,7 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import GithubIcon from "../../../public/github-icon.svg";
-import LinkedinIcon from "../../../public/linkedin-icon.svg";
+import youtubue from "../../../public/icons8-youtube.svg";
+import insta from "../../../public/insta.svg";
+import donate from "../../../public/icons8-donate-48.png";
+import zap from "../../../public/icons-whatsapp.svg";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -16,7 +18,7 @@ const EmailSection = () => {
       message: e.target.message.value,
     };
     const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
+    const endpoint = "/api/send/app.js";
 
     // Form the request for sending data to the server.
     const options = {
@@ -39,6 +41,9 @@ const EmailSection = () => {
     }
   };
 
+  const endpoint = "/api/send/";
+
+
   return (
     <section
       id="contact"
@@ -49,7 +54,7 @@ const EmailSection = () => {
         <h5 className="text-xl font-bold text-white my-2">
           Let`&apos;s Connect
         </h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
+        <p className="text-[#ADB7BE] mb-4 max-w-md ">
           {" "}
           muita atenção ao realizar uma compra, não haverá reembolso! acione o nosso sac para tirar as dúvidas antes de realizar a compra
           verifique os status dos servidores antes de realizar a compra
@@ -57,11 +62,17 @@ const EmailSection = () => {
 
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="github.com">
-            <Image src={GithubIcon} alt="Github Icon" />
+          <Link href="https://www.instagram.com/imports_cel1/" target="_blank">
+            <Image src={insta} alt="Instagram Icon" />
           </Link>
-          <Link href="linkedin.com">
-            <Image src={LinkedinIcon} alt="Linkedin Icon" />
+          <Link href="https://www.youtube.com/watch?v=UwAdx-p1WzQ" target="_blank">
+            <Image src={youtubue} alt="Youtube Icon" />
+          </Link>
+          <Link href="https://sacola.pagseguro.uol.com.br/1104420c-0410-43ce-8f1a-da11d659293d" target="_blank">
+            <Image src={donate} alt="Donate Icon" />
+          </Link>
+          <Link href="https://api.whatsapp.com/send?phone=17981508885" target="_blank">
+            <Image src={zap} alt="Whatsapp Icon" />
           </Link>
         </div>
       </div>
