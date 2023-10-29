@@ -11,7 +11,7 @@ const projectsData = [
     description: "PEDIDO CONTA NOVA SHARK TOOL  10 CREDITO R$ 89,00",
     image: "/images/projects/card.png",
     tag: ["Loja"],
-    gitUrl: "/",
+    gitUrl: "https://wa.me/17988101676?text=Olá, tenho interesse neste produto: SharkTool - 10 Créditos - R$ 89,00",
     previewUrl: "/",
   },
   {
