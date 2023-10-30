@@ -11,7 +11,7 @@ const projectsData = [
     description: "PEDIDO CONTA NOVA SHARK TOOL  10 CREDITO R$ 89,00",
     image: "/images/projects/card.png",
     tag: ["Loja"],
-    gitUrl: "https://wa.me/17988101676?text=Olá, tenho interesse neste produto: SharkTool - 10 Créditos - R$ 89,00",
+    gitUrl: "https://sacola.pagseguro.uol.com.br/e996f606-5f1a-4c86-8690-011e670e5b7c,",
     previewUrl: "/",
   },
   {
@@ -20,7 +20,7 @@ const projectsData = [
     description: "PEDIDO CONTA  ANTIGA SHARK TOOL  10 CREDITO R$59,00",
     image: "/images/projects/card.png",
     tag: ["Loja"],
-    gitUrl: "https://wa.me/17988101676?text=Olá, tenho interesse neste produto: SharkTool - 10 Créditos - R$ 59.00",
+    gitUrl: "https://sacola.pagseguro.uol.com.br/4a8c05e9-44ab-4294-96a4-082719910f9b",
     previewUrl: "/",
   },
   {
@@ -29,7 +29,7 @@ const projectsData = [
     description: "PEDIDO CONTA  DESBLOQUEIO  MOTOROLA  AQUI R$60,00",
     image: "/images/projects/card.png",
     tag: ["Loja"],
-    gitUrl: "https://wa.me/17988101676?text=Olá, tenho interesse neste produto: The Magic Tool - Desbloqueio Motorola - R$60,00",
+    gitUrl: "https://sacola.pagseguro.uol.com.br/6cae90c9-24e8-4f39-8b1b-5729af556f8c",
     previewUrl: "/",
   },
   {
@@ -38,7 +38,7 @@ const projectsData = [
     description: "USB Redirector Client FAÇA SUA COMPRA ",
     image: "/images/projects/card.png",
     tag: ["Loja"],
-    gitUrl: "https://wa.me/17988101676?text=Olá, tenho interesse neste produto: USB Redirector Client - R$65,00",
+    gitUrl: "https://sacola.pagseguro.uol.com.br/34367d9b-c8d4-4ae3-ab86-11061e13f9b6",
     previewUrl: "/",
   },
   {
@@ -47,7 +47,7 @@ const projectsData = [
     description: "Assista o tutorial para cria sua conta no The Magic Tool",
     image: "/images/projects/card.png",
     tag: [ "Tutorial"],
-    gitUrl: "/",
+    gitUrl: "https://www.youtube.com/watch?si=sBAMRA6-qo685DZy&v=brQNtHwO-Nc&feature=youtu.be",
     previewUrl: "/",
   },
   {
@@ -56,7 +56,7 @@ const projectsData = [
     description: "APRENDA DESBLOQUEIO VIA REMOTO PASSO A PASSO ",
     image: "/images/projects/card.png",
     tag: ["Tutorial"],
-    gitUrl: "/",
+    gitUrl: "https://sacola.pagseguro.uol.com.br/b5a3580c-37c9-48ab-8042-a684112636e8",
     previewUrl: "/",
   },
   {
@@ -65,7 +65,7 @@ const projectsData = [
     description: "APRENDA DESBLOQUEAR COM A FERRAMENTA PASSO A PASSO ",
     image: "/images/projects/card.png",
     tag: ["Tutorial"],
-    gitUrl: "/",
+    gitUrl: "https://sacola.pagseguro.uol.com.br/1eb1f80d-59b3-46a4-aa77-583b0e67364b",
     previewUrl: "/",
   },
   
