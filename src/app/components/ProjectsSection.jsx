@@ -11,7 +11,7 @@ const projectsData = [
     description: "PEDIDO CONTA NOVA SHARK TOOL  10 CREDITO R$ 89,00",
     image: "/images/projects/card.png",
     tag: ["Loja"],
-    gitUrl: "https://sacola.pagseguro.uol.com.br/e996f606-5f1a-4c86-8690-011e670e5b7c,",
+    gitUrl: "https://sacola.pagseguro.uol.com.br/e996f606-5f1a-4c86-8690-011e670e5b7c",
     previewUrl: "/",
   },
   {
