@@ -28,7 +28,7 @@ const projectsData = [
     title: "The Magic Tool - Desbloqueio Motorola - R$60,00",
     description: "PEDIDO CONTA  DESBLOQUEIO  MOTOROLA  AQUI R$60,00",
     image: "/images/projects/card.png",
-    tag: ["Loja"],
+    tag: ["Loja"], 
     gitUrl: "https://sacola.pagseguro.uol.com.br/6cae90c9-24e8-4f39-8b1b-5729af556f8c",
     previewUrl: "/",
   },
@@ -91,7 +91,7 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+      <h2 className="text-center text-4xl font-bold text-white mt-4">
         Loja
       </h2>
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">

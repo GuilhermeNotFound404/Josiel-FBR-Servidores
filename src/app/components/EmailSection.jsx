@@ -7,47 +7,49 @@ import zap from "../../../public/icons-whatsapp.svg";
 import Link from "next/link";
 import Image from "next/image";
 
-const EmailSection = () => {
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
+export const EmailSection = () => {
+  const formInitialDetails = {
+    email: '',
+    message: ''
+  };
+ 
+ const [formDetails, setFormDetails] = useState(formInitialDetails);
+const [buttonText, setButtonText] = useState('Enviar');
+const [emailSubmitted, setEmailSubmitted] = useState(false); 
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send/app.js";
+const onFormUpdate = (category, value) => {
+  setFormDetails((state) => ({
+    ...state,
+    [category]: value
+  }));
+};
 
-    // Form the request for sending data to the server.
-    const options = {
-      // The method is POST because we are sending data.
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setButtonText("Enviando...");
+  try {
+    let response = await fetch("/api/send", {
       method: "POST",
-      // Tell the server we're sending JSON.
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json;charset=utf-8",
       },
-      // Body of the request is the JSON data we created above.
-      body: JSONdata,
-    };
+      body: JSON.stringify(formDetails),
+    });
+    setButtonText("Enviar");
+    
+    if (response.status !== 200)
+      throw new Error("Ocorreu um erro ao buscar");
 
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
-
-    if (response.status === 200) {
-      console.log("Message sent.");
       setEmailSubmitted(true);
+      setFormDetails(formInitialDetails);
+    } catch (error) {
+      console.error("Error occurred while fetching:", error);
+      toast.error('Erro ao enviar contato, tente novamente!');
     }
   };
 
-  const endpoint = "/api/send/";
-
-
   return (
-    <section
-      id="contact"
-      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
+    <section id="contact" className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
     >
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
@@ -77,11 +79,11 @@ const EmailSection = () => {
         </div>
       </div>
       <div>
-        {emailSubmitted ? (
+      <form onSubmit={handleSubmit}>
           <p className="text-green-500 text-sm mt-2">
             Email sent successfully!
           </p>
-        ) : (
+
           <form className="flex flex-col" onSubmit={handleSubmit}>
             <div className="mb-6">
               <label
@@ -90,14 +92,8 @@ const EmailSection = () => {
               >
                 Your email
               </label>
-              <input
-                name="email"
-                type="email"
-                id="email"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="jacob@google.com"
-              />
+                 <input type="email" value={formDetails.email} placeholder="Email" onChange={(e) => onFormUpdate('email', e.target.value)} 
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"/>
             </div>
             <div className="mb-6">
               <label
@@ -106,14 +102,10 @@ const EmailSection = () => {
               >
                 Subject
               </label>
-              <input
-                name="subject"
-                type="text"
-                id="subject"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Just saying hi"
-              />
+              <textarea rows="6" value={formDetails.message} placeholder="Menssagem" onChange={(e) => onFormUpdate('message', e.target.value)}
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5">
+                
+              </textarea>
             </div>
             <div className="mb-6">
               <label
@@ -133,10 +125,10 @@ const EmailSection = () => {
               type="submit"
               className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
             >
-              Send Message
+              <span>{buttonText}</span>
             </button>
           </form>
-        )}
+          </form>
       </div>
     </section>
   );
