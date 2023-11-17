@@ -4,11 +4,22 @@ export async function POST(request) {
     const { email, subject, message } = await request.json()
 
     try {
+        // esse e-mail ele vai mandar para ele mesmo?es
+        // pq eu iria querer entrar no seu site para enviar um e-mail para mim mesmo?!(!??!?! porque não tem banco de dados 
+        // é assim que envia um e-mail, mas não para o e-mail do cara que digitou não tem nem sentindo
+        
         const mailOptions = {
             from: 'guilherme.souza617@etec.sp.gov.br',
-            to: email,
+            to: 'leonadokof123@gmail.com',
             subject: subject,
-            text: message
+            html: `
+                <div>
+                    <h1>Olá, o site recebeu uma nova mensagem!</h1>
+                    <p>Assunto: ${subject}</p>
+                    <p>De: ${email}</p>
+                    <p>Mensagem: ${message}</p>
+                </div>
+            `
         };
         
         await promisifySendMail(mailOptions)
