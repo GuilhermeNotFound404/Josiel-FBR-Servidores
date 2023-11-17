@@ -6,7 +6,7 @@ export const transporter = nodemailer.createTransport({
     user: "guilherme.souza617@etec.sp.gov.br",
     pass: "Chesterbennington123"
   },
-  pool: true, // Habilitar pooling
+  pool: true,
   connectionTimeout: 5000
 });
 
