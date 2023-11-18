@@ -16,8 +16,7 @@ export const EmailSection = () => {
   };
 
   const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, setButtonText] = useState("Enviar");
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const onFormUpdate = (category, value) => {
     setFormDetails((state) => ({
@@ -28,12 +27,14 @@ export const EmailSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setButtonText("Enviando...");
+    setSending(true)
+    const toastId = toast.loading("Enviando mensagem...")
+    
     try {
       if (formDetails.email === "" || formDetails.message === "" || formDetails.subject === "") {
         throw new Error("Preencha todos os campos");
       }
-
+      
       let response = await fetch("/api/send", {
         method: "POST",
         headers: {
@@ -41,17 +42,27 @@ export const EmailSection = () => {
         },
         body: JSON.stringify(formDetails),
       });
-      setButtonText("Enviar");
 
       if (response.status !== 200) throw new Error("Ocorreu um erro ao buscar");
 
-      setEmailSubmitted(true);
       setFormDetails(formInitialDetails);
-      toast.success("Mensagem enviada com sucesso!");
+      setSending(false)
+      toast.update(toastId, {
+        toastId,
+        render: "Mensagem enviada com sucesso!",
+        type: "success",
+        autoClose: 3000,
+        isLoading: false
+      });
     } catch (error) {
-      setButtonText("Enviar");
-      toast.error(error.message);
-      // toast.error("Erro ao enviar contato, tente novamente!");
+      setSending(false)
+      toast.update(toastId, {
+        toastId,
+        render: error.message,
+        type: "error",
+        autoClose: 3000,
+        isLoading: false
+      });
     }
   };
 
@@ -116,7 +127,7 @@ export const EmailSection = () => {
               onChange={(e) => onFormUpdate("email", e.target.value)}
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               required
-              />
+            />
           </div>
           <div className="mb-6">
             <label
@@ -154,8 +165,9 @@ export const EmailSection = () => {
           <button
             type="submit"
             className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+            disabled={sending}
           >
-            <span>{buttonText}</span>
+            <span>{sending ? 'Enviando...' : 'Enviar'}</span>
           </button>
         </form>
       </div>
