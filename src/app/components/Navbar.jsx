@@ -9,7 +9,7 @@ import loja from "./ProjectsSection";
 const navLinks = [
   {
     title: "Sobre",
-    path: "#about",
+    path: "/#about",
     
   },
   {
@@ -18,7 +18,7 @@ const navLinks = [
   },
   {
     title: "Contato",
-    path: "#contact",
+    path: "/#contact",
   },
 ];
 
