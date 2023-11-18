@@ -6,15 +6,12 @@ export const transporter = nodemailer.createTransport({
     user: "guilherme.souza617@etec.sp.gov.br",
     pass: "Chesterbennington123"
   },
-  pool: true,
-  connectionTimeout: 5000
+  pool: false,
 });
 
 export const promisifySendMail = async (mailOptions) => {
   return new Promise((res, rej) => {
     transporter.sendMail(mailOptions, (err, result) => {
-      console.log(err)
-      console.log(result)
       if (err) {
         rej(err)
       } else {

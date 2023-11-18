@@ -17,15 +17,15 @@ export async function POST(request) {
                 </div>
             `
         };
-        
-        await Promise.all([
-            promisifySendMail(mailOptions),
-        ]);
+    
+        console.log("começando a enviar e-mail")
+        await promisifySendMail(mailOptions);
     
         return Response.json({
             message: "E-mail enviado com sucesso!"
         })
     } catch (error) {
+        console.log("deu erro ao enviar e-mail")
         console.log(error)
         return Response.error()
     }
